@@ -41,3 +41,12 @@ main {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
 }
+
+.flag {
+    width: 80px;
+    height: auto;
+    visibility: hidden;
+    position: absolute;
+    left: 590px;
+    top: -15px;
+}

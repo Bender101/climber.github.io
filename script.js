@@ -6,7 +6,7 @@ function loading() {
         [573, 280],
         [752, 237],
         [711, 169],
-        [620, 53],
+        [620, 65],
 
     ];
 
@@ -25,18 +25,25 @@ function loading() {
     document.addEventListener('keydown', function(event) {
         if (event.code === 'KeyX') {
             if (currentPosition < hooks.length) {
-                ++currentPosition;
+                currentPosition++;
                 climber.style.left = coord[currentPosition][0] + 'px';
                 climber.style.top = coord[currentPosition][1] + 'px';
             }
         } else if (event.code === 'KeyZ') {
             if (currentPosition > 0) {
-                --currentPosition;
+                currentPosition--;
                 climber.style.left = coord[currentPosition][0] + 'px';
                 climber.style.top = coord[currentPosition][1] + 'px';
             }
         }
+
+        let flag = document.querySelector('.flag');
+        if (currentPosition == coord.length - 1) {
+            flag.style.visibility = 'visible'
+        }
     });
+
+
 
 };
 loading();
