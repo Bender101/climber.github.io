@@ -3,10 +3,11 @@ function loading() {
     let coord = [
         [218, 403],
         [330, 305],
-        [752, 237],
         [573, 280],
+        [752, 237],
         [711, 169],
-        [620, 53]
+        [620, 53],
+
     ];
 
     let hooks = document.querySelectorAll('.hook')
@@ -20,7 +21,22 @@ function loading() {
     climber.style.left = coord[0][0] + 'px';
     climber.style.top = coord[0][1] + 'px';
 
+    let currentPosition = 0;
+    document.addEventListener('keydown', function(event) {
+        if (event.code === 'KeyX') {
+            if (currentPosition < hooks.length) {
+                ++currentPosition;
+                climber.style.left = coord[currentPosition][0] + 'px';
+                climber.style.top = coord[currentPosition][1] + 'px';
+            }
+        } else if (event.code === 'KeyZ') {
+            if (currentPosition > 0) {
+                --currentPosition;
+                climber.style.left = coord[currentPosition][0] + 'px';
+                climber.style.top = coord[currentPosition][1] + 'px';
+            }
+        }
+    });
 
-
-}
-window.onload = loading;
+};
+loading();

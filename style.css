@@ -10,7 +10,7 @@ main {
 .field {
     position: relative;
     border: 1px solid rgb(226, 212, 212);
-    background: linear-gradient(to top, rgb(255, 255, 255), rgb(127, 200, 243));
+    background: linear-gradient(to top, rgb(255, 255, 255), rgb(44, 164, 233));
     ;
 }
 
@@ -31,8 +31,13 @@ main {
 
 .climber {
     position: absolute;
+    transition: 0.3s;
     left: 0;
     bottom: 0;
     width: auto;
     height: 80px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
