@@ -1,0 +1,38 @@
+main {
+    width: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field {
+    position: relative;
+    border: 1px solid rgb(226, 212, 212);
+    background: linear-gradient(to top, rgb(255, 255, 255), rgb(127, 200, 243));
+    ;
+}
+
+.mountains {
+    display: flex;
+    height: 100%;
+    position: relative;
+    width: 1500px;
+    height: 500px;
+}
+
+.hook {
+    position: absolute;
+    width: 36px;
+    height: 3px;
+    background-color: forestgreen;
+}
+
+.climber {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    height: 80px;
+}
