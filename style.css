@@ -1,6 +1,4 @@
 main {
-    width: auto;
-    height: auto;
     position: relative;
     display: flex;
     justify-content: center;
@@ -11,7 +9,15 @@ main {
     position: relative;
     border: 1px solid rgb(226, 212, 212);
     background: linear-gradient(to top, rgb(255, 255, 255), rgb(44, 164, 233));
-    ;
+}
+
+@media (max-width: 1440px) {
+    .field {
+        max-width: 980px;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
 }
 
 .mountains {
@@ -49,4 +55,64 @@ main {
     position: absolute;
     left: 590px;
     top: -15px;
+}
+
+.score {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff;
+    left: 5px;
+    top: 5px;
+    width: 180px;
+    height: 70px;
+    border: 10px solid rgba(231, 235, 6, 0.699);
+    border-radius: 50px;
+    box-shadow: 0 0 4px 3px rgb(150, 136, 13);
+    background-color: rgba(34, 139, 34, 0.877);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.jesus {
+    width: 30px;
+    height: auto;
+    opacity: 0;
+    position: absolute;
+    right: 550px;
+    top: 230px;
+    animation-name: jesuss;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes jesuss {
+    0% {
+        width: 20px;
+        height: auto;
+        opacity: 0;
+        right: 550px;
+        top: 230px;
+    }
+    50% {
+        width: 50px;
+        height: auto;
+        opacity: 0.5;
+        right: 550px;
+        top: 80px;
+    }
+    100% {
+        width: 120px;
+        height: auto;
+        opacity: 1;
+        position: absolute;
+        right: 550px;
+        top: 150px;
+    }
 }

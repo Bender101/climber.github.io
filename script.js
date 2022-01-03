@@ -2,7 +2,7 @@ function loading() {
 
     let coord = [
         [218, 403],
-        [330, 305],
+        [370, 305],
         [573, 280],
         [752, 237],
         [711, 169],
@@ -10,7 +10,10 @@ function loading() {
 
     ];
 
-    let hooks = document.querySelectorAll('.hook')
+    let hooks = document.querySelectorAll('.hook');
+    let score = document.querySelector('.score');
+    score.innerHTML = 'x - верх<br>z - вниз'
+    let scoreCounter = 0;
 
     for (let i = 0; i < hooks.length; i++) {
         hooks[i].style.left = coord[i][0] + 'px';
@@ -25,13 +28,17 @@ function loading() {
     document.addEventListener('keydown', function(event) {
         if (event.code === 'KeyX') {
             if (currentPosition < hooks.length) {
-                currentPosition++;
+                ++currentPosition;
+                scoreCounter += 100;
+                score.innerHTML = `SCORE:<br>${scoreCounter}`
                 climber.style.left = coord[currentPosition][0] + 'px';
                 climber.style.top = coord[currentPosition][1] + 'px';
             }
         } else if (event.code === 'KeyZ') {
             if (currentPosition > 0) {
-                currentPosition--;
+                --currentPosition;
+                scoreCounter -= 100;
+                score.innerHTML = `SCORE:<br>${scoreCounter}`
                 climber.style.left = coord[currentPosition][0] + 'px';
                 climber.style.top = coord[currentPosition][1] + 'px';
             }
@@ -40,10 +47,14 @@ function loading() {
         let flag = document.querySelector('.flag');
         if (currentPosition == coord.length - 1) {
             flag.style.visibility = 'visible'
+            flag.style.transitionDelay = '0.4s'
+            setTimeout(gameEnd, 1000)
         }
     });
 
-
+    function gameEnd() {
+        window.location.href = 'gameEnd.html';
+    }
 
 };
-loading();
+window.onload = loading;
